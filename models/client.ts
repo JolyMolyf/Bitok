@@ -8,7 +8,7 @@ module.exports = (sequelize:any, DataTypes:any) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models:any) {
-      // define association here
+      Client.belongsTo(models.Person)
     }
   };
   Client.init({
