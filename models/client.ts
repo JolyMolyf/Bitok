@@ -9,6 +9,7 @@ module.exports = (sequelize:any, DataTypes:any) => {
      */
     static associate(models:any) {
       // define association here
+      Client.belongsTo(models.Person);
     }
   };
   Client.init({
@@ -28,10 +29,18 @@ module.exports = (sequelize:any, DataTypes:any) => {
     },
     address: {
       type: DataTypes.STRING,
-    }
+    },
+    // fk_personId: {
+    //   type: UUID, 
+    //   references:{
+    //     model: 'People',
+    //     key: 'id'
+    //   }
+    // }
   }, {
     sequelize,
     modelName: 'Client',
+
   });
   return Client;
 };

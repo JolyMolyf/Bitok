@@ -23,6 +23,14 @@ module.exports = {
       address: {
         type: Sequelize.STRING
       },
+      // fk_personId: {
+      //   type: UUID, 
+      //   references:{
+      //     model: 'Person',
+          // key: 'id'
+      //   }
+      
+      // },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

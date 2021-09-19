@@ -1,8 +1,6 @@
-'use strict';
 
-import { UUID } from "sequelize/types";
 import { carType } from '../types/car'
-
+import { UUID, UUIDV4 } from 'sequelize';
 
 const {
   Model
@@ -20,7 +18,7 @@ module.exports = (sequelize:any, DataTypes:any) => {
     brand!: string;
     model?: string;
     vin?: string;
-    price?: number;
+    price?: string;
     type?: string;
     market?: string;
     link?: string;
@@ -29,13 +27,18 @@ module.exports = (sequelize:any, DataTypes:any) => {
     }
   };
   Car.init({
-    id: UUID,
+    id: {
+      primaryKey: true, 
+      type: UUID,
+      allowNull: false,  
+
+    },
     description: DataTypes.STRING,
     brand: DataTypes.STRING,
     model: DataTypes.STRING,
     vin: DataTypes.STRING,
-    price: DataTypes.NUMBER,
-    type: DataTypes.STRING,
+    price: DataTypes.STRING,
+    carType: DataTypes.STRING,
     market: DataTypes.STRING,
     link: DataTypes.STRING
   }, {

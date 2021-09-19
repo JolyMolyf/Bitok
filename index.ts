@@ -13,9 +13,10 @@ const createPeople = () => {
   })
 }
 
-createPeople();
 
-
+// db.Client.findAll().then((res:any) => {
+//   console.log(res);
+// })
 
 
 db.sequelize.sync().then(()=>{

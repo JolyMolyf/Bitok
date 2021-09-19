@@ -4,7 +4,7 @@ export interface carType {
   brand?: string,
   model?: string,
   vin?: string,
-  price?: number,
+  price?: any,
   type?: string,
   market?: string,
   link?: string
