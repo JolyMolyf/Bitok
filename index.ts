@@ -5,6 +5,7 @@ import { people } from './seeders/people'
 
 const app = express() 
 
+app.use('/api/cars', require('./app/routes/cars'));
 const PORT = process.env.PORT || 3000; 
 
 const createPeople = () => {

@@ -3,9 +3,15 @@ export interface carType {
   description?: string,
   brand?: string,
   model?: string,
+  genreation?:string;
   vin?: string,
-  price?: number,
+  price?: string,
   type?: string,
   market?: string,
-  link?: string
+  link?: string,
+  year:string,
+  milage?:string,
+  color?:string,
+  gearBox?:string, 
+  drive?:string,
 }

@@ -1,6 +1,6 @@
-'use strict';
 
-import { UUID } from "sequelize/types";
+
+import { UUID } from "sequelize";
 import { carType } from '../types/car'
 
 
@@ -19,25 +19,38 @@ module.exports = (sequelize:any, DataTypes:any) => {
     description!: string;
     brand!: string;
     model?: string;
+    generation?:string;
     vin?: string;
-    price?: number;
+    price?: string;
     type?: string;
     market?: string;
     link?: string;
+    year!:string;
+    milage?:string;
+    color?:string
     static associate(models:any) {
-      // define association here
+      Car.belongsTo(models.Engine)
     }
   };
   Car.init({
-    id: UUID,
+    id: {
+      type: UUID, 
+      primaryKey: true
+    },
     description: DataTypes.STRING,
     brand: DataTypes.STRING,
     model: DataTypes.STRING,
+    generation: DataTypes.STRING,
     vin: DataTypes.STRING,
-    price: DataTypes.NUMBER,
+    price: DataTypes.STRING,
     type: DataTypes.STRING,
     market: DataTypes.STRING,
-    link: DataTypes.STRING
+    link: DataTypes.STRING,
+    year: DataTypes.STRING,
+    milage: DataTypes.STRING,
+    color:DataTypes.STRING,
+    drive: DataTypes.STRING,
+    gearBox: DataTypes.STRING,
   }, {
     sequelize,
     modelName: 'Car',
